@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
-
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -28,4 +27,5 @@ gulp.task('serve', ['sass', 'minify-css'], function() {
 
   gulp.watch('app/scss/*.scss', ['sass']);
   gulp.watch('app/css/main.css', ['minify-css']);
+  gulp.watch('app/*.html').on('change', browserSync.reload);
 });
