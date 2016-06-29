@@ -3,9 +3,72 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    
+    <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+      <svg width="200" height="200" class="nav-svg-position">
+        <!-- <rect x="25" y="25" width="150" height="150" fill="#56a0d3" stroke-linecap="round"/> -->
+        <!-- <g class="svg-name" fill="#f7484e" stroke-width="15" font-size="18" font-family="Verdana"> -->
+        <g class="svg-name">
+          <text x="90" y="45">
+            MUHAMMAD
+          </text>
+          <text x="105" y="55">
+            ILHAM
+          </text>
+        </g>
+        <line x1="25" y1="25" x2="150" y2="150" class="line-build" stroke-linecap="round"/>
+        <line x1="25" y1="40" x2="100" y2="165" class="line-build"/>
+        <line x1="150" y1="150" x2="100" y2="125" class="line-build"/>
+        <line x1="100" y1="125" x2="100" y2="165" class="line-build" stroke-linecap="round"/>
+      </svg>
+      <ul>
+        <li><a class="underlined--white" href="">About</a></li>
+        <li><a class="underlined--white" href="">Work</a></li>
+        <li><a class="underlined--white" href="">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="o-wrapper" class="o-wrapper">
+      <div class="c-buttons">
+        <button id="c-button--slide-left" class="c-button"><i class="material-icons material-spec-icon" title="Show navigation">menu</i></button>
+      </div>
+    <!-- other content in here -->
+
+    </div><!-- /o-wrapper -->
+
+    <!-- menus here -->
+
+    <div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+
+        </div>
+      </div>
+    </div>
+
+    <script src="js/6364dd1b0d769d7bbb44.js"></script>
+
+    <script type="text/javascript">
+      var slideLeft = new Menu({
+        wrapper: '#o-wrapper',
+        type: 'slide-left',
+        menuOpenerClass: '.c-button',
+        maskId: '#c-mask'
+      });
+
+      var slideLeftBtn = document.querySelector('#c-button--slide-left');
+
+      slideLeftBtn.addEventListener('click', function(e) {
+        e.preventDefault;
+        slideLeft.open();
+      });
+    </script>
   </body>
 </html>

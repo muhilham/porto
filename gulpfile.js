@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var webpack = require('webpack-stream');
 
 gulp.task('sass', function() {
     gulp.src('app/scss/main.scss')
@@ -13,12 +14,19 @@ gulp.task('sass', function() {
 gulp.task('minify-css', function() {
   return gulp.src('app/css/main.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('app/styles'))
+    .pipe(gulp.dest('app/css'))
     .pipe(reload({ stream:true }));
 });
 
+gulp.task('pack-up', function() {
+  return gulp.src(['node_modules/jquery/dist/jquery.min.js', 'app/scripts/*'])
+    .pipe(webpack())
+    .pipe(gulp.dest('app/js'));
+});
+
+
 // watch Sass files for changes, run the Sass preprocessor with the 'sass' task and reload
-gulp.task('serve', ['sass', 'minify-css'], function() {
+gulp.task('serve', ['sass', 'minify-css', 'pack-up'], function() {
   browserSync({
     server: {
       baseDir: 'app'
